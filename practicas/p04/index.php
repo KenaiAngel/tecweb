@@ -29,6 +29,62 @@
         echo '<li>$_element1 es válida porque inicia con guión bajo.</li>';
         echo '<li>$house*5 es inválida porque el símbolo * no está permitido.</li>';
         echo '</ul>';
+
+        echo '<p>Ejercicio 2</p><br>' ;
+        $a = "ManejadorSQL";
+        $b = 'MySQL';
+        $c = &$a;
+
+        echo $a.'<br>';
+        echo $b.'<br>';
+        echo $c.'<br>';
+
+        echo '<br>';
+
+        $a = "PHP server";
+        $b = &$a;
+
+        echo $a.'<br>';
+        echo $b.'<br>';
+
+
+        echo '<p>Respuesta: Asignamos otro valor a la varible 
+        $a y $b, modificamos la variable $a y obtenemos su valor por referencia para asignarla a $b </p>';
+
+        
+        
+        echo '<br><p>Ejercicio 3</p><br>' ;
+        unset($a);
+        unset($b);
+        unset($c);
+
+        $a = "PHP5";
+        echo $a.'<br>';
+        $z[] = &$a;
+        print_r($z);
+        echo '<br>';
+        $b = "5a version de PHP";
+        echo $b.'<br>';
+        @$c = $b*10;
+        echo $c.'<br>';
+        $a .= $b;
+        echo $a.'<br>';
+        @$b *= $c;
+        echo $b.'<br>';
+        $z[0] = "MySQL";
+        print_r($z);
+        echo '<br>';
+
+        echo '<br><p>Ejercicio 4</p><br>' ;
+        function mostrar(){
+            echo '$a en el ambito global: '.$GLOBALS['a'].'<br>';
+            echo '$b en el ambito global: '.$GLOBALS['b'].'<br>';
+            echo '$c en el ambito global: '.$GLOBALS['c'].'<br>';
+            print_r ($GLOBALS['z']);
+    
+        }
+        mostrar();
+
     ?>
 </body>
 </html>
