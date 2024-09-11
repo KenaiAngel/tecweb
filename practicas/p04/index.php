@@ -85,6 +85,46 @@
         }
         mostrar();
 
+        echo '<br><p>Ejercicio 5</p><br>' ;
+        /*Dar el valor de las variables $a, $b, $c al final del siguiente script:
+$a = “7 personas”;
+$b = (integer) $a;
+$a = “9E3”;
+$c = (double) $a;
+6. Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
+usando la función var_dump(<datos>). */
+        unset($a);
+        unset($b);
+        unset($c);
+
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
+        
+        echo $a.'<br>';
+        echo $b.'<br>';
+        echo $c.'<br>';
+
+        echo '<br><p>Ejercicio 6</p><br>' ;
+        unset($a);
+        unset($b);
+        unset($c);
+
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        echo '$a ='.$a.'<br>';
+        echo '$b ='.$b.'<br>';
+        echo '$c ='.(bool) $c ? 'true' : 'false'.'<br>';
+        echo '$d ='.$d.'<br>';
+        echo '$e ='.(bool) $e ? 'true' : 'false'.'<br>';
+        echo '$f ='.$f.'<br>';
+
     ?>
 </body>
 </html>
