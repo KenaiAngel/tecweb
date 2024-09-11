@@ -125,6 +125,20 @@ usando la función var_dump(<datos>). */
         echo '$e ='.(bool) $e ? 'true' : 'false'.'<br>';
         echo '$f ='.$f.'<br>';
 
+        /*7. Usando la variable predefinida $_SERVER, determina lo siguiente:
+a. La versión de Apache y PHP,
+b. El nombre del sistema operativo (servidor),
+c. El idioma del navegador (cliente). */
+
+        echo '<br><p>Ejercicio 7</p><br>' ;
+
+        echo 'Software:- '.$_SERVER['SERVER_SOFTWARE'].'<br>';
+        echo  'Sistema Operativo:- '.PHP_OS.'<br>';
+        echo  'Lenguaje:- '.$_SERVER['HTTP_ACCEPT_LANGUAGE'].'<br>';
+        
+        
+
+
     ?>
 </body>
 </html>
