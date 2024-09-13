@@ -18,9 +18,9 @@
 
   
     <form action="http://52.43.117.247/neo/classroom/tw/concurso.php" method="post">
-      <fieldset style="border: 0;">
+      <fieldset>
         <!--<legend>Factos</legend>-->
-        <p>Información del Participante</p>
+        <legend><p>Información del Participante</p></legend>
         <ul>
           <li>Nombre:  <input type="text" placeholder="Nombre" name="name"></li>
           <li>Dirección de E-mail: <input type="email" placeholder="E-mail" name="email"></li>
@@ -32,10 +32,12 @@
       </fieldset>
 
 
-      <fieldset style="border: 0;">
-        <h2>Diseña tus Mike personalizados:</h2>
-        <p>Diseño personalizado del Tenis</p>
-        <p>Color <em>(escoge uno)</em>:</p>
+      <h2>Diseña tus Mike personalizados:</h2>
+      <fieldset>
+      <legend><p>Diseño personalizado del Tenis</p></legend>
+
+      <fieldset>
+      <legend><p>Color <em>(escoge uno)</em>:</p></legend>
         <ul>
         <li><input type="radio" name="color" value="Green">Green</li>
         <li><input type="radio" name="color" value="White">White</li>
@@ -44,8 +46,8 @@
         </ul>
       </fieldset>
 
-      <fieldset style="border: 0;">
-          <p>Características <em>(escoge tantas como quieras)</em>:</p>
+      <fieldset>
+        <legend><p>Características <em>(escoge tantas como quieras)</em>:</p></legend>
             <ul>
               <li><input type="checkbox" name="features[]" value="laces">Cordones brillantes</li>
               <li><input type="checkbox" name="features[]" value="Logo" checked>Logo metálico</li>
@@ -55,10 +57,23 @@
 
       </fieldset>
 
-      <fieldset style="border: 0;">
-          <p>Talla</p>
-          <p>Las medidas reflejan el estándar masculino:</p>
+      <fieldset>
+      <legend><p>Talla</p></legend>
+          <p>Las medidas reflejan el estándar masculino:
+            <select name="talla" size="1">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            </select>
+            </p>  
       </fieldset>
+    </fieldset>
       
           <p>
             <input type="submit" value="!Chidos mis Tenis¡">
