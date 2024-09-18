@@ -9,6 +9,8 @@
     <h2>Ejercicio 1</h2>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
     <?php
+        include 'src/funciones.php';
+
         if(isset($_GET['numero']))
         {
             $num = $_GET['numero'];
@@ -38,5 +40,16 @@
             echo $_POST["email"];
         }
     ?>
+
+    <div>
+        <h2>
+            Ejercicio 2
+        </h2>
+        <br>
+        <?php
+            
+            generarSecuencia();
+        ?>
+    </div>
 </body>
 </html>
