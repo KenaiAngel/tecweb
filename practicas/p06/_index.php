@@ -118,6 +118,20 @@
         ?>
     </div>
 
+    <div>
+        
+        <h2>Ejercicio 4</h2>
+        <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’ a la ‘z’.</p>
+        <?php
+            $ascii = valoresAscii();
+            foreach ($ascii as $key => $value) {
+                echo '['.$key.'] =>'.$value.'<br>';
+            }
+            
+        ?>
+
+    </div>
+
 
 </body>
 </html>
