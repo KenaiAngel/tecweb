@@ -132,6 +132,32 @@
 
     </div>
 
+    <div>
+        <h2>Ejercicio 5</h2>
+        
+        <form action="" method="post">
+            <p>Sexo:</p> 
+            <select name="sexo" id="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select><br>
+            <p>Edad:</p>
+            <input type="number" name="edad" id="edad"><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <?php
+            if(isset($_POST['sexo']) && isset($_POST['edad'])){
+                $sexo = $_POST['sexo'];
+                $edad = $_POST['edad'];
+                if ($sexo == "femenino" && $edad >= 18 && $edad <= 35) {
+                    echo "<p>Bienvenida, usted está en el rango de edad permitido.</p>";
+                } else {
+                    echo "<p>Error: Sus datos no cumplen con los requisitos .</p>";
+                }
+            }        
+        ?>
+    </div>
+
 
 </body>
 </html>
