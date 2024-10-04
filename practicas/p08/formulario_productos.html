@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Ingresa Tus Productos</h1>
+            <form id="formularioTenis" action="set_producto_v2.php" method="post">
+
+                    
+            
+                    <div>
+                      <ul><label for="form-name">Nombre:</label> <input type="text" name="name" id="form-name"></ul>
+                      <ul><label for="form-marca">Marca:</label> <input type="text" name="brand" id="form-brand"></ul>
+                      <ul><label for="form-model">Modelo:</label> <input type="text" name="model" id="form-model"></ul>
+                      <ul><label for="form-price">Precio:</label> 
+                        <input type="number" id="form-price" 
+                        name="price" min="0" 
+                        max="10000" step="0.01" />   
+                      </ul>
+                      <ul><label for="form-features">Detalles</label><br><textarea name="features" rows="4" cols="60" id="form-features" placeholder="No más de 300 caracteres de longitud"></textarea></ul>
+                      <ul><label for="form-unit">Unidades:</label> 
+                        <input type="number" id="form-unit" 
+                        name="units" min="1" 
+                        max="10000" step="1" />   
+                      </ul>
+
+                      <ul><label for="form-img">Nombre de la imagen:</label> <input type="text" name="img" id="form-img"></ul>
+                      <!--
+                      <li><label for="form-img">Imagen:</label>
+                        <input type="file" id="form-img" name="img" accept="image/png, image/jpeg" />
+                      </li>-->
+                    </div>
+                    <div>
+                        <p>
+                            <input type="submit" value="Subir datos">
+                            <input type="reset">
+                        </p>
+                    </div>
+
+                <!-- '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')-->
+
+            </form>
+
+        </div>
+    </section>
+</body>
+</html>
