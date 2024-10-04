@@ -128,7 +128,12 @@
 
 						//INSERCION DE DATOS ************************************************************************
 						unset($sql);
-						$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
+						$sql = 
+						//"INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}',0)";
+						"INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen)
+						VALUES ('{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
+
+
 	
 						if ( $link->query($sql) ) 
 						{
