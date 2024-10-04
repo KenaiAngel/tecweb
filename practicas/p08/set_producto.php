@@ -1,14 +1,14 @@
 <?php
-$nombre = 'nombre_producto';
-$marca  = 'marca_producto';
-$modelo = 'modelo_producto';
-$precio = 1.0;
-$detalles = 'detalles_producto';
-$unidades = 1;
-$imagen   = 'img/imagen.png';
+$nombre = 'Blazer';
+$marca  = 'Nike';
+$modelo = 'Blazer Mid77 Vintage';
+$precio = 2000.0;
+$detalles = 'Nike,Blazer Mid77 Vintage, tallas (25 cm - 29 cm)';
+$unidades = 18;
+$imagen   = 'img/blazer.png';
 
 /** SE CREA EL OBJETO DE CONEXION */
-@$link = new mysqli('localhost', 'root', '12345678a', 'marketzone');	
+@$link = new mysqli('localhost', 'root', 'sapo123', 'marketplace');	
 
 /** comprobar la conexión */
 if ($link->connect_errno) 
