@@ -116,25 +116,36 @@ function agregarProducto(e) {
     var finalJSON = JSON.parse(productoJsonString);
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
+    if (finalJSON.imagen === '') {
+        finalJSON.imagen = 'img/cat.png'; 
+    }
 
     //validacion
-    validar(finalJSON);
+    if(!(validar(finalJSON))){
+        window.alert("Ingrese los datos de la manera que se le pide");
+    }
+    else{
+        // SE OBTIENE EL STRING DEL JSON FINAL
+        productoJsonString = JSON.stringify(finalJSON,null,2);
 
+        // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
+        var client = getXMLHttpRequest();
+        client.open('POST', './backend/create.php', true);
+        client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
+        client.onreadystatechange = function () {
+            // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
+            if (client.readyState == 4 && client.status == 200) {
+                console.log("Imprimir1");
+                console.log("[CLIENTE]\n" + client.responseText);
+                window.alert(client.responseText);
+            }
 
-    // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
+               
+        };
+        client.send(productoJsonString);
+        
+    }
 
-    // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
-    var client = getXMLHttpRequest();
-    client.open('POST', './backend/create.php', true);
-    client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
-    client.onreadystatechange = function () {
-        // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
-        if (client.readyState == 4 && client.status == 200) {
-            console.log(client.responseText);
-        }
-    };
-    client.send(productoJsonString);
 }
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
@@ -195,17 +206,18 @@ function validar(objeto) {
     if (isNaN(objeto.unidades) || parseInt(objeto.unidades) <= 0) {
         error += '<p>Las unidades deben ser un número mayor o igual a 0</p>';
     }
-
-    if ((objeto.marca != 'Nike') || (objeto.marca != 'Jordan') || (objeto.marca != 'Converse') (objeto.marca != 'Adidas')){
-        error += '<p>El modelo debe ser o Nike, o Jordan, o Converse, o Adidas.</p>';
+    console.log("mARCA"+objeto.marca);
+    if ((objeto.marca != 'Nike') && (objeto.marca != 'Jordan') && (objeto.marca != 'Converse') && (objeto.marca != 'Adidas')) {
+        error += '<p>La marca debe ser o Nike, o Jordan, o Converse, o Adidas.</p>';
     }
+    
 
     // Mostrar errores si existen
     if (error !== "") {
         document.getElementById('error_validacion').innerHTML = error;
         hayError = true;
     } else {
-        document.getElementById('error_validacion').innerHTML = ''; 
+        document.getElementById('error_validacion').innerHTML = ""; 
         hayError = false;
     }
 
