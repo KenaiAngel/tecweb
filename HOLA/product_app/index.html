@@ -12,12 +12,8 @@
       
         <ul></ul>
         <form>
-          <fieldset>
-            <legend>Buscar Productos Con Alguna Referenacia a su Id, Nombre, Marca y Detalles</legend>
-            <input name="search" id="search" type="search" placeholder="ID">
-            <button type="submit" onclick="buscarProducto(event)">Buscar</button>
-          </fieldset>
-          
+          <input name="search" id="search" type="search" placeholder="ID">
+          <button type="submit" onclick="buscarID(event)">Buscar</button>
         </form>
     </nav>
 
@@ -28,19 +24,9 @@
           <div>
             <input type="text" id="name" placeholder="Nombre de producto">
           </div>
-
-          <div id="error_name">
-
-          </div>
-          
           <div>
             <textarea id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>
           </div>
-
-          <div  id="error_validacion">
-
-          </div>
-
           <input type="hidden" id="taskId">
           <button type="submit" onclick="agregarProducto(event)" >
             Agregar Producto

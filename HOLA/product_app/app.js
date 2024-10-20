@@ -8,8 +8,6 @@ var baseJSON = {
     "imagen": "img/default.png"
   };
 
-
-
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
 function buscarID(e) {
     /**
@@ -62,65 +60,16 @@ function buscarID(e) {
     client.send("id="+id);
 }
 
-function buscarProducto(e) {
-	e.preventDefault();
-	let search = document.getElementById("search").value;
-
-	var client = getXMLHttpRequest();
-	client.open("POST", "./backend/read.php", true);
-	client.setRequestHeader(
-		"Content-Type",
-		"application/x-www-form-urlencoded"
-	);
-	client.onreadystatechange = function () {
-		if (client.readyState == 4 && client.status == 200) {
-            console.log("Imprimir1");
-			console.log("[CLIENTE]\n" + client.responseText);
-			let productos = JSON.parse(client.responseText);
-            console.log(productos.length);
-			if (productos.length > 0) {
-                console.log("Imprimir");
-				let template = "";
-				productos.forEach((producto) => {
-					let descripcion = "";
-					descripcion += "<li>precio: " + producto.precio + "</li>";
-					descripcion += "<li>unidades: " + producto.unidades + "</li>";
-					descripcion += "<li>modelo: " + producto.modelo + "</li>";
-					descripcion += "<li>marca: " + producto.marca + "</li>";
-					descripcion += "<li>detalles: " + producto.detalles + "</li>";
-					template += `
-                        <tr>
-                            <td>${producto.id}</td>
-                            <td>${producto.nombre}</td>
-                            <td><ul>${descripcion}</ul></td>
-                        </tr>
-                    `;
-				});
-				document.getElementById("productos").innerHTML = template;
-			}
-		}
-	};
-	client.send("search=" + search);
-}
-
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
 function agregarProducto(e) {
     e.preventDefault();
 
     // SE OBTIENE DESDE EL FORMULARIO EL JSON A ENVIAR
     var productoJsonString = document.getElementById('description').value;
-    console.log(productoJsonString);
-
-
     // SE CONVIERTE EL JSON DE STRING A OBJETO
     var finalJSON = JSON.parse(productoJsonString);
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
-
-    //validacion
-    validar(finalJSON);
-
-
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
 
@@ -163,57 +112,6 @@ function getXMLHttpRequest() {
     return objetoAjax;
 }
 
-function validar(objeto) {
-    console.log(objeto.nombre);
-
-    let error = "";
-    let hayError = false;
-
-    // Validación del nombre
-    if ((objeto.nombre.length > 100) || (objeto.nombre.length === 0)) {
-        error += '<p>El nombre sobrepasa el límite de 100 caracteres, o esta vacio</p>';  
-    }
-
-    // Validación del modelo
-    if ((objeto.modelo.length > 25) || (objeto.modelo.length === 0)) {
-        error += '<p>El modelo sobrepasa el límite de 25 caracteres</p>'; 
-    } else if (!(/\d/.test(objeto.modelo))) {
-        error += '<p>El modelo debe contener al menos un número</p>';
-    }
-
-    // Validación de detalles
-    if (objeto.detalles.length > 300) {
-        error += '<p>Los detalles sobrepasan el límite de 300 caracteres</p>';
-    }
-
-    // Validación del precio
-    if (isNaN(objeto.precio) || parseFloat(objeto.precio) < 99.99) {
-        error += '<p>El precio debe ser un número y estar por encima de 99.99</p>';
-    }
-
-    // Validación de unidades
-    if (isNaN(objeto.unidades) || parseInt(objeto.unidades) <= 0) {
-        error += '<p>Las unidades deben ser un número mayor o igual a 0</p>';
-    }
-
-    if ((objeto.marca != 'Nike') || (objeto.marca != 'Jordan') || (objeto.marca != 'Converse') (objeto.marca != 'Adidas')){
-        error += '<p>El modelo debe ser o Nike, o Jordan, o Converse, o Adidas.</p>';
-    }
-
-    // Mostrar errores si existen
-    if (error !== "") {
-        document.getElementById('error_validacion').innerHTML = error;
-        hayError = true;
-    } else {
-        document.getElementById('error_validacion').innerHTML = ''; 
-        hayError = false;
-    }
-
-    return hayError;
-
-}
-
-
 function init() {
     /**
      * Convierte el JSON a string para poder mostrarlo
@@ -222,16 +120,3 @@ function init() {
     var JsonString = JSON.stringify(baseJSON,null,2);
     document.getElementById("description").value = JsonString;
 }
-
-document.getElementById("name").addEventListener("input", () => {
-    
-    let name = document.getElementById("name").value;
-
-    if (name.length > 100) {
-        document.getElementById('error_name').innerHTML += 
-            '<p>El nombre sobrepasa el límite de 100 caracteres</p>'
-        ;
-    } else {
-        document.getElementById('error_name').innerHTML = ''; 
-    }
-});
