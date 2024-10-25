@@ -2,8 +2,8 @@
     $conexion = @mysqli_connect(
         'localhost',
         'root',
-        '12345678a',
-        'marketzone'
+        'sapo123',
+        'marketplace'
     );
 
     /**
