@@ -235,15 +235,3 @@ function init() {
     document.getElementById("description").value = JsonString;
 }
 
-document.getElementById("name").addEventListener("input", () => {
-    
-    let name = document.getElementById("name").value;
-
-    if (name.length > 100) {
-        document.getElementById('error_name').innerHTML += 
-            '<p>El nombre sobrepasa el límite de 100 caracteres</p>'
-        ;
-    } else {
-        document.getElementById('error_name').innerHTML = ''; 
-    }
-});
