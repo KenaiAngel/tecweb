@@ -4,17 +4,20 @@
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
     $data = array();
     // SE VERIFICA HABER RECIBIDO EL ID
-    if( isset($_POST['id']) ) {
-        $id = $_POST['id'];
+    if( isset($_GET['search']) ) {
+        $search = $_GET['search'];
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-        if ( $result = $conexion->query("SELECT * FROM productos WHERE id = '{$id}'") ) {
+        $sql = "SELECT * FROM productos WHERE (id = '{$search}' OR nombre LIKE '%{$search}%' OR marca LIKE '%{$search}%' OR detalles LIKE '%{$search}%') AND eliminado = 0";
+        if ( $result = $conexion->query($sql) ) {
             // SE OBTIENEN LOS RESULTADOS
-			$row = $result->fetch_array(MYSQLI_ASSOC);
+			$rows = $result->fetch_all(MYSQLI_ASSOC);
 
-            if(!is_null($row)) {
+            if(!is_null($rows)) {
                 // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
-                foreach($row as $key => $value) {
-                    $data[$key] = utf8_encode($value);
+                foreach($rows as $num => $row) {
+                    foreach($row as $key => $value) {
+                        $data[$num][$key] = utf8_encode($value);
+                    }
                 }
             }
 			$result->free();
