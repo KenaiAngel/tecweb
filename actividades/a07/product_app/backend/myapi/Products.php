@@ -1,5 +1,4 @@
 <?php
-
     namespace TECWEB\MYAPI;
     use TECWEB\MYAPI\DataBase as DataBase;
     require_once __DIR__. '/DataBase.php';
@@ -11,6 +10,14 @@
             //$this->conexion = new DataBase($user, $pass, $db);
             $this->data = array();
             parent::__construct($db, $user, $pass);
+        }
+
+        public function getData(){
+            // SE HACE LA CONVERSIÓN DE ARRAY A JSON
+            $jsonData = json_encode($this->data, JSON_PRETTY_PRINT);
+            $this->data=NULL;
+            return $jsonData;//$jsonData;
+            
         }
 
         public function list(){
@@ -131,6 +138,26 @@
             $this->conexion->close();
         }
 
+        public function singleByName($product)  {
+            $this->data = array();
+            // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
+            if ( $result = $this->conexion->query("SELECT * FROM productos WHERE nombre = {$product}") ) {
+                // SE OBTIENEN LOS RESULTADOS
+                $row = $result->fetch_assoc();
+
+                if(!is_null($row)) {
+                    // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
+                    foreach($row as $key => $value) {
+                        $this->data[$key] = utf8_encode($value);
+                    }
+                }
+                $result->free();
+            } else {
+                die('Query Error: '.mysqli_error($this->conexion));
+            }
+            $this->conexion->close();
+        }
+
         public function edit($jsonOBJ)
         {
             $this->data = array(
@@ -151,14 +178,6 @@
                 $this->conexion->close();
             
         }
-        
-
-        public function getData(){
-            // SE HACE LA CONVERSIÓN DE ARRAY A JSON
-            $jsonData = json_encode($this->data, JSON_PRETTY_PRINT);
-            $this->data=NULL;
-            return $jsonData;//$jsonData;
-            
-        }
+    
     }
 ?>

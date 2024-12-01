@@ -21,7 +21,7 @@
         echo json_encode($data, JSON_PRETTY_PRINT);
     }
     /*
-    $productos = new Products('marketzone');
+    $productos = new Products('marketplace');
     $productos->single( $_POST['id'] );
     echo $productos->getData();
     */
