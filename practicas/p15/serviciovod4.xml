@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="catalogovod.xsl"?>
+<Catalogovod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="serviciovod.xsd">
+    <cuenta correo="angel.sanchezroj@alumno.buap.mx">
+        <perfiles>
+            <perfil usuario="Kenai" idioma="Ingles" />
+            <perfil usuario="Pinto" idioma="Español" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Ciencia ficción">
+                <titulo duracion="01:44:00">Dune</titulo>
+                <titulo duracion="01:47:00">Star Wars Episodio 3</titulo>
+                <titulo duracion="01:57:00">Interstellar</titulo>
+                <titulo duracion="01:48:00">Star Trek</titulo>
+            </genero>
+            <genero nombre="Terror">
+                <titulo duracion="01:52:00">VHS</titulo>
+                <titulo duracion="01:43:00">REC</titulo>
+                <titulo duracion="01:50:00">IT</titulo>
+                <titulo duracion="02:07:00">Whinie The Pooh</titulo>
+            </genero>
+        </peliculas>
+        <series region="ESP">
+            <genero nombre="Animacion">
+                <titulo duracion="00:50:00">Arcane</titulo>
+                <titulo duracion="00:50:00">AOT</titulo>
+            </genero>
+            <genero nombre="Crimen">
+                <titulo duracion="01:00:00">Better Call Saul</titulo>
+                <titulo duracion="00:50:00">Breaking Bad</titulo>
+            </genero>
+        </series>
+    </contenido>
+</Catalogovod>
