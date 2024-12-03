@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:card xmlns:b="http://businesscard.org"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://businesscard.org business_card2.xsd">
+    <b:name>JUAN CARLOS</b:name>
+    <b:title>CEO, Google Inc.</b:title>
+    <b:email>carlos.conder@correo.buap.mx</b:email>
+    <b:phone>222-0-11-22-33</b:phone>
+    <b:logo b:uri="bane.gif"/>
+</b:card>
