@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="12345" visitas="7" puntos="100">
+        <nombre>Kenai Rojas</nombre>
+        <correo>angel.sanchezroj@alumno.buap.mx</correo>
+        <telefono tipo="movil">2225562900</telefono>
+    </tarjeta>
+</cinefanatico>
