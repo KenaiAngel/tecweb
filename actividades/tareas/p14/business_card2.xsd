@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Para hacer uso de los elementos y atributos especificados en el estándar de XML Schema, 
+    debemos incluir en el elemento raíz la referencia al espacio de nombres “http://www.w3.org/2001/XMLSchema”
+-->
+<!--
+    xmlns: identifica el espacio de nombres al que pertenecen los componentes incluidos en el esquema, 
+    asignando opcional pero regularmente un prefijo (este prefijo suele ser “xs” o “xsd”.
+    Esto indica que los elementos y tipos de datos utilizados en el esquema provienen del espacio de nombres
+    “http://www.w3.org/2001/XMLSchema”,
+-->
+<!--
+    Además, es posible asociar un espacio de nombres propio (target namespace), para esto se puede utilizar el atributo 
+    targetNamespace en el elemento raíz:
+-->
+<!--
+    También se puede especificar si los elementos y atributos utilizados en él schema deben estar certificados
+    por un namespace, ya sea explícitamente mediante un prefijo o implícitamente de forma predeterminada, 
+    cuando se utilicen en un documento instancia XML. 
+    Para ello se pueden utilizar los atributos elementFormDefault y attributeFormDefault del elemento <xsd:schema>. 
+    Los posibles valores de estos atributos son:
+
+    “qualified”:    indica que, en los documentos instancia XML que referencien a este esquema, 
+                    los elementos (en el caso de elementFormDefault)/atributos (en el caso de attributeFormDefault)
+                    del “target namespace” deben estar cualificados con un prefijo.
+                    
+    “unqualified”:  Este es el valor por defecto. Indica que los elementos/atributos no necesitan estar prefijados 
+                    en el documento instancia.
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:b="http://businesscard.org"
+    targetNamespace="http://businesscard.org"
+    elementFormDefault="unqualified" attributeFormDefault="unqualified">
+    
+    <xsd:element name="card" type="b:card_type"/>
+    <xsd:element name="name" type="xsd:string"/>
+    <xsd:element name="title" type="xsd:string"/>
+    <xsd:element name="email" type="xsd:string"/>
+    <xsd:element name="phone" type="xsd:string"/>
+    <xsd:element name="logo" type="b:logo_type"/>
+    
+    <xsd:attribute name="uri" type="xsd:anyURI"/>
+    
+    <xsd:complexType name="card_type">
+        <xsd:sequence>
+            <xsd:element ref="b:name"/>
+            <xsd:element ref="b:title"/>
+            <xsd:element ref="b:email"/>
+            <xsd:element ref="b:phone" minOccurs="0"/>
+            <xsd:element ref="b:logo" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="logo_type">
+        <xsd:attribute ref="b:uri" use="required"/>
+    </xsd:complexType>
+    
+</xsd:schema>

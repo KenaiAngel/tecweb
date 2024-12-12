@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="Spotify">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Cuenta" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Nombre" type="xsd:string"/>
+                            <xsd:element name="Correo" type="xsd:string"/>
+                            <xsd:element name="Telefono" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:string">
+                                            <xsd:attribute name="tipo" use="required" type="xsd:string" />
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute name="id" use="required" type="xsd:string" />
+                        <xsd:attribute name="plan" use="required" type="xsd:string" />
+                        <xsd:attribute name="fechaIni" use="optional" type="xsd:date" />
+                        <xsd:attribute name="fechaFin" use="optional" type="xsd:date" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogovod>
+    <cuenta>
+        <correo>
+            kenai@gmail.com
+        </correo>
+
+        <perfiles>
+            <perfil>
+                <usuario>
+                    Koni
+                </usuario>
+                <idioma>
+                    Ingles
+                </idioma>
+            </perfil>
+            <perfil>
+                <usuario>
+                    Pintlo
+                </usuario>
+                <idioma>
+                    Español
+                </idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+
+    <contenido>
+        <peliculas>
+            <!--GENERO 1-->
+            <genero>
+                <nombre>
+                    Ciencia ficción
+                </nombre>
+                <titulo>
+                    <nombre>
+                        Interstellar
+                    </nombre>
+                    <duracion>
+                        120 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Dune
+                    </nombre>
+                    <duracion>
+                        120 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Star Wars
+                    </nombre>
+                    <duracion>
+                        120 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        WALL-E
+                    </nombre>
+                    <duracion>
+                        120 min
+                    </duracion>
+                </titulo>
+            </genero>
+            <!--GENERO 2-->
+            <genero>
+                <nombre>
+                    Comedia
+                </nombre>
+                <titulo>
+                    <nombre>
+                        Superbad
+                    </nombre>
+                    <duracion>
+                        113 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        The Hangover
+                    </nombre>
+                    <duracion>
+                        100 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Step Brothers
+                    </nombre>
+                    <duracion>
+                        98 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Bridesmaids
+                    </nombre>
+                    <duracion>
+                        125 min
+                    </duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+
+        <!-- programas -->
+        <programas>
+            <!--GENERO 1-->
+            <genero>
+                <nombre>
+                    Documentales
+                </nombre>
+                <titulo>
+                    <nombre>
+                        Planet Earth
+                    </nombre>
+                    <duracion>
+                        60 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Cosmos
+                    </nombre>
+                    <duracion>
+                        50 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Blue Planet
+                    </nombre>
+                    <duracion>
+                        55 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Our Planet
+                    </nombre>
+                    <duracion>
+                        65 min
+                    </duracion>
+                </titulo>
+            </genero>
+            <!--GENERO 2-->
+            <genero>
+                <nombre>
+                    Series
+                </nombre>
+                <titulo>
+                    <nombre>
+                        Breaking Bad
+                    </nombre>
+                    <duracion>
+                        47 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Stranger Things
+                    </nombre>
+                    <duracion>
+                        50 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        Game of Thrones
+                    </nombre>
+                    <duracion>
+                        55 min
+                    </duracion>
+                </titulo>
+                <titulo>
+                    <nombre>
+                        The Crown
+                    </nombre>
+                    <duracion>
+                        52 min
+                    </duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>

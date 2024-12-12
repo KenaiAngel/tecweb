@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogovod>
+    <cuenta>
+        <correo nombre="kenai@gmail.com"/>
+          
+        <perfiles>
+            <perfi usuario="Koni" idioma="Ingles"/>
+            <perfi usuario="Koni" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+
+    <contenido>
+        <peliculas>
+            <!--GENERO 1-->
+            <genero nombre="Ciencia ficción">
+                
+                <titulo nombre="Interstellar" duracion="120 min"/>
+                <titulo nombre="Dune" duracion="120 min"/>
+                <titulo nombre="Star Wars" duracion="120 min"/>
+                <titulo nombre="WALL-E" duracion="120 min"/>
+               
+            </genero>
+            <!--GENERO 2-->
+            <genero nombre="Comedia">
+    
+                <titulo nombre="Superbad" duracion="113 min"/>
+                <titulo nombre="The Hangover" duracion="100 min"/>
+                <titulo nombre="Step Brothers" duracion="98 min"/>
+                <titulo nombre="Bridesmaids" duracion="125 min"/>
+
+            </genero>
+        </peliculas>
+
+        <!-- programas -->
+        <programas>
+            <!--GENERO 1-->
+            <genero nombre="Documentales">
+                <titulo nombre="Planet Earth" duracion="60 min"/>
+                <titulo nombre="Cosmos" duracion="50 min"/>
+                <titulo nombre="Blue Planet" duracion="58 min"/>
+                <titulo nombre="Our Planet" duracion="65 min"/>
+
+            </genero>
+            <!--GENERO 2-->
+            <genero nombre="Series">
+                <titulo nombre="Breaking Bad" duracion="47 min"/>
+                <titulo nombre="Stranger Things" duracion="50 min"/>
+                <titulo nombre="Game of Thrones" duracion="58 min"/>
+                <titulo nombre="The Crown" duracion="52 min"/>
+
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
