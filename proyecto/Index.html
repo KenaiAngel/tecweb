@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheafetery - Encuentra tu comida en CU BUAP</title>
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/Cafeteria.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="js/Funciones.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cheafetery</span>
+            </div>
+            <div>
+                <center><b style="color: #ffffff; font-size: 32px;">BUAP</b></center>
+            </div>
+            <div class="nav-links">
+                <a href="Index.html">Inicio</a>
+                <a href="Index.html#map">Productos</a>
+                <a href="Index.html#dashboard">Dashboard</a>
+                <a id="session" href="Cuenta.html   ">
+                    <center><i class="fa-solid fa-user" style="color: #FFFFFF;"></i></center>
+                    <p sytle="">Cuenta</p>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main> 
+        <!--Aqui dashboard-->
+        <section id="Dashboard">
+            <div class="card">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                
+                <!--Publico en genral(sin login)-->
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <script>Grafica()</script>
+                <!--Cafeteria(con login)-->
+
+                
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar restaurante">
+                <ul id="resultados" class="result-list"></ul>
+                    
+            </div>
+            
+            <div class="filters">
+                <b>Lista de Categorías: </b>
+                <button class="filter-btn" value="Bebida">Bebida</button>
+                <button class="filter-btn" value="2">Snacks</button>
+                <button class="filter-btn" value="3">Frescos</button>
+                <button class="filter-btn" value="4">Postres</button>
+                <button class="filter-btn" value="5">Comida Preparada</button>
+                <button class="filter-btn" value="6">Congelados</button>
+                <button class="filter-btn" value="7">Lácteos</button>
+                <button class="filter-btn" value="8">Saludables</button>
+                <button class="filter-btn" value="9">Bebidas</button>
+                <button class="filter-btn" value="10">Otros</button>
+            </div>
+                    
+            
+        </section>
+        
+        <center><h1>Productos</h1></center>
+        <hr>
+        <br>
+
+        <section id="products">
+            <!--<div class="card">
+                <div class="image-placeholder">
+                    <img src="img/tacos3.jpeg" alt="">
+                </div>
+                <div class="product-info">
+                    <h2>Producto</h2>
+                    <p><i class="fas fa-map-marker-alt"></i>Facultad de ciencias de la computación</p>
+                    <p>Descripción: Esto es un ejemplo de una Descripción
+                        para una carta de estas para el resutaurante
+                        akjndjasdnkjsan nasjdn jasdncjasdnva
+                        asdkcnjasndcjhnasdcnasjhcjahdcjsabcj
+                    </p>
+                    <p class="price2">$1000</p>
+                    <p class="price">$999</p>
+                </div>
+            </div>-->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Para Restaurantes</h3>
+                <ul>
+                    <li><a href="#">Registra tu negocio</a></li>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    <script src="js/Search.js"></script>
+</body>
+</html>

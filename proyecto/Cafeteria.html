@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del usuario</title>
+    <link rel="stylesheet" href="css/Cafeteria.css">
+    <link rel="stylesheet" href="css/Main.css">
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <div class="container">
+       <aside class="sidebar">
+        <ul>
+            <li><a>Cuenta</a></li>
+            <li></li>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="#">Configuración</a></li>
+            <li><a onclick="cerrarsession()">Cerrar Sesión</a></li>
+        </ul>
+       </aside>
+
+       <main class="content">
+        <section class="add-products">
+            <h1>Agregar producto</h1>
+              <form id="product-form">
+                <div class="form-group">
+                  <li id="msnombre"></li>
+                  <input class="form-control" type="text" id="nombre" placeholder="Nombre de producto">
+                </div>
+                <div class="form-group">
+                  <li id="mscategoria"></li>
+                  <select class="form-control" name="categoria" id="categoria">
+                    <option value="">Categoria:</option>
+                    <option value="Bebida">Bebida</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Productos Frescos">Productos Frescos</option>
+                    <option value="Postres">Postres</option>
+                    <option value="Comida Preparada">Comida Preparada</option>
+                    <option value="Congelados">Congelados</option>
+                    <option value="Lácteos">Lácteos</option>
+                    <option value="Saludables">Saludables</option>
+                    <option value="Otros">Otros</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <li id="msprecioOrg"></li>
+                  <input class="form-control" type="number" id="precioOrg" name="precioOrg" placeholder="Precio Original">
+                </div>
+                <div class="form-group">
+                  <li id="msprecio"></li>
+                  <input class="form-control" type="number" id="precio" name="precio" step="0.01" placeholder="Precio Final">
+                </div>
+                <div class="form-group">
+                  <li id="msdetalles"></li>
+                  <textarea class="form-control" id="detalles" name="detalles" rows="4" cols="50" maxlength="300" placeholder="Descripción"></textarea>
+                </div>
+                <div class="form-group">
+                  <li id="msunidades"></li>
+                  <input class="form-control" type="number" id="unidades" name="unidades" placeholder="Cantidades disponibles">
+                </div>
+                <div class="form-group">
+                  <label for="imagen">Imagen del producto: </label>
+                  <li id="msimagen"></li>
+                  <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+                <input type="hidden" id="productId">
+                <button class="btn btn-primary btn-block text-center" type="submit">
+                  Agregar Producto
+                </button>
+              </form>
+        </section>
+        <!---->
+        <section>
+          <h2>Productos Activos</h2>
+          <table clase="" id="productos-table">
+            <thead>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio Original</th>
+              <th>Precio Final</th>
+              <th>Eliminar</th>
+            </thead>
+            <tbody id="productos-list">
+              <!--Se cargan los productos activos de manera dinamica-->
+            </tbody>
+          </table>
+        </section>
+     
+       </main> 
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="js/addProducts.js"></script>
+</body>
+</html>

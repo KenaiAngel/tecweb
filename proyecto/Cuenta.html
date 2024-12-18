@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Registrarse</title>
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/Cuenta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cheafetery</span>
+            </div>
+            <div>
+                <center><b style="color: #ffffff; font-size: 32px;">BUAP</b></center>
+            </div>
+            <div class="nav-links">
+                <a href="Index.html">Inicio</a>
+                <a href="Index.html#map">Productos</a>
+                <a href="Index.html#dashboard">Dashboard</a>
+                <a id="session" href="LogandReg.html">
+                    <center><i class="fa-solid fa-user" style="color: #FFFFFF;"></i></center>
+                    <p sytle="">Cuenta</p>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor_todo">
+            <div class="caja_trasera">
+                <div class="caja_trasera-login">
+                    <h3>Iniciar Sesión</h3>
+                    <button id="btn_inicio">Iniciar Sesión</button>
+                </div>
+                <div class="caja_trasera-register">
+                    <h4>¿Aún no tienes una cuenta?</h4>
+                    <h3>Registrate</h3>
+                    <button id="btn_registrarse">Registrate</button>
+                </div>
+            </div>
+                <!--Formulario para el registro-->
+            <div class="contenedor_login-register">
+                <form class="formulario_login">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="text" placeholder="Nombre de usuario" id="cargar_correo" autocomplete="username">
+                    <input type="password" placeholder="Contraseña" id="cargar_usuario" autocomplete="current-password">
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+    
+                <form class="formulario_register">
+                    <h2>Registrarse</h2>
+                    <input type="text" placeholder="Nombre de usuario" id="nomCafeteria" autocomplete="username">
+                    <input type="password" placeholder="Contraseña" id="Contraseña" autocomplete="new-password">
+                    <input type="password" placeholder="Confirmar Contraseña" id="Contraseña2" autocomplete="new-password">
+                    <input type="text" placeholder="Ubicación" id="Ubicacion">
+                    <button type="submit">Registrarse</button>
+                </form> 
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Para Restaurantes</h3>
+                <ul>
+                    <li><a href="#">Registra tu negocio</a></li>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/Cuenta.js"></script>
+    <script src="js/App.js"></script>
+</body>
+</html>
